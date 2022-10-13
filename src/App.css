@@ -1,0 +1,78 @@
+body{
+  background-color: #333;/* Black Theme*/
+  color: white;
+}
+
+.App {
+  text-align: center;
+}
+
+header h1{
+  margin: 100px 10px;
+  margin-bottom: 80px;
+  font-size: 90px;
+}
+
+.row-form , .taskDecor{
+  margin: 15px 30vw;
+}
+
+.row-form {
+  display: flex;
+  margin: 0vh 35vw;
+  margin-bottom: 60px;
+  padding: 5PX 0vw;
+  padding-right: 20PX;
+  background-color: white;
+  border-radius: 25px;
+  box-shadow: 2px 5px 5px red;
+}
+
+input:focus{
+  border: none;
+}
+
+.row-form .col-1{
+  margin-right: 30px;
+}
+
+.taskDecor {
+  background-color: #333;
+  padding: 8px 20px;
+  text-align: left;
+  font-size: 18px;
+  display: flex;
+}
+
+.taskDecor .done .taskText{
+  text-decoration: line-through;
+  margin-left: 15px;
+  opacity: 1 px;
+}
+
+.taskDecor .not-done , .done{
+  margin-left: 15px;
+  width: 300px;
+}
+
+.taskIndex{
+  color: rgb(138, 138, 138);
+}
+
+.wrapDelete{
+  position: relative;
+  transform: translateY(-20%);
+  margin-left: 20vw;
+}
+
+.wrapDelete button{
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.wrapDelete p{
+  padding-top: 8px;
+  transform: translateX(-18%);
+  font-size: 12px;
+}
