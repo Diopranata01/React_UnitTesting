@@ -16,6 +16,7 @@ export default function NameForm() {
     email: "",
     noHandphone: "",
     noBaru: '',
+    noMain: '',
   }
   const suratKesungguhan = useRef('')
   const [data, setData] = useState(baseData);
