@@ -17,8 +17,7 @@ export default function NameForm() {
     noHandphone: "",
     noBaru: '',
     noMain: '',
-    noMainBaru: '',
-    noTesting:''
+    noMainBaru: ''
   }
   const suratKesungguhan = useRef('')
   const [data, setData] = useState(baseData);
