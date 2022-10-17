@@ -14,8 +14,7 @@ export default function NameForm() {
   const baseError = {
     nama: "",
     email: "",
-    noHandphone: "",  
-    noHp: 'new rebase main',
+    noHandphone: "",
   }
   const suratKesungguhan = useRef('')
   const [data, setData] = useState(baseData);
