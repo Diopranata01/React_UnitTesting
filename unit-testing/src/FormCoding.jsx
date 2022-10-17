@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
-import styles from "./FormCodingBootcamp.module.css"
+import styles from "./FormCoding.module.css"
+// import Search from './Search'
 
 export default function NameForm() {
   const baseData = {
@@ -13,7 +14,7 @@ export default function NameForm() {
   const baseError = {
     nama: "",
     email: "",
-    noHandphone: "",
+    noHandphone: "", 
   }
   const suratKesungguhan = useRef('')
   const [data, setData] = useState(baseData);
@@ -69,8 +70,9 @@ export default function NameForm() {
   return (
     <>
     <h1 style={{"textAlign":"center"}}>Pendaftaran Peserta Coding Bootcamp</h1>
+      {/* <Search/> */}
     <form onSubmit={handleSubmit} className={styles.centerForm}>
-      <label>
+      <label placeholder='label'>
         Nama Lengkap:
         <input
           required
@@ -81,18 +83,19 @@ export default function NameForm() {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label placeholder='label'>
         Email: <br/>
         <input
           required
           className={styles.input}
           type="email"
           name="email"
+          data-testid="email-form"
           value={data.email}
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label placeholder='label'>
         No Handphone: <br/>
         <input
           type="number"
@@ -101,12 +104,14 @@ export default function NameForm() {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label placeholder='label'>
         Latar Belakang Pendidikan: <br/>
         <input
           required
           type="radio"
           name="pendidikan"
+          placeholder='label-radio1'
+          id='pendidikan'
           value="IT"
           checked={data.pendidikan === 'IT'}
           onChange={handleChange}
@@ -114,13 +119,14 @@ export default function NameForm() {
         <input
           type="radio"
           name="pendidikan"
+          placeholder='label-radio2'
           value="Non IT"
           checked={data.pendidikan === "Non IT" ? true : false}
           onChange={handleChange}
         />Non IT
       </label>
       <br/>
-      <label>
+      <label placeholder='label'>
         Kelas Coding yang Dipilih: <br/>
         <select
           required
@@ -130,12 +136,12 @@ export default function NameForm() {
           onChange={handleChange}
         >
         <option disabled value="">Pilih Salah Satu Program</option>
-        <option value="golang">Coding Backend with Golang</option>
-        <option value="reactjs">Coding Frontend with ReactJS</option>
-        <option value="fullstack">Fullstack Developer</option>
+        <option value="golang" data-testid="select-input1">Coding Backend with Golang</option>
+        <option value="reactjs" data-testid="select-input2">Coding Frontend with ReactJS</option>
+        <option value="fullstack" data-testid="select-input3">Fullstack Developer</option>
         </select>
       </label>
-      <label>
+      <label placeholder='label'>
         Foto Surat Kesungguhan:
         <input
           required
@@ -145,7 +151,7 @@ export default function NameForm() {
           onChange={handleChange}
         />
       </label>
-      <label>
+      <label placeholder='label'>
         Harapan Untuk Coding Bootcamp Ini: <br/>
         <textarea
           type="text"
@@ -158,14 +164,14 @@ export default function NameForm() {
       <ul>
         {Object.keys(errorMassage).map(key => {
           if (errorMassage[key] !== "") {
-            return <li className={styles.errorMassage} key={key}>{errorMassage[key]}</li>
+            return <li className={styles.errorMassage} key={key} data-testid='error-form'>{errorMassage[key]}</li>
           }
           return null
         })}
       </ul>
       <br/>
       <br/>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Submit" data-testid='submit-form'/>
       <button className={styles.buttonReset} onClick={resetForm}>Reset</button>
     </form>
     </>
